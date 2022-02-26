@@ -10,6 +10,7 @@ class TAUser:
         self.class_id = class_id
         self.start_hours = start_hours
         self.end_hours = end_hours
+        self.assigned_student = 0
 
     
     '''
