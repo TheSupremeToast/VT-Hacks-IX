@@ -1,0 +1,4 @@
+.env
+__pycache__/
+commands/__pycache__/
+ideas.md

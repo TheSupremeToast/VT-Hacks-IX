@@ -13,7 +13,6 @@ def get_cogs():
             pos = file.path.index('.py')
             filename = file.path[2:pos]
             cog_files.append(f'commands.{filename}')
-            print(f'commands/{filename}.py has loaded.')
     os.chdir('../')
     return cog_files
 
@@ -22,7 +21,15 @@ def get_cogs():
 # helper function to import extension command files
 #
 def load_cogs(bot):
-    # cog_files = get_cogs() # uncomment when testing all files
-    cog_files = ['commands.example'] # list of manually imported cog files
+    cog_files = get_cogs() # uncomment when testing all files
+    # cog_files = ['commands.example'] # list of manually imported cog files
     for cog_file in cog_files:
         bot.load_extension(cog_file)
+
+#
+# helper function to reload cog files
+#
+def reload_cogs(bot):
+    for cog_file in get_cogs():
+        print(cog_file)
+        bot.reload_extension(cog_file)
