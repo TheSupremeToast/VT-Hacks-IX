@@ -5,7 +5,7 @@ class TAUser:
     '''
     Initializes the TA User
     '''
-    def __init__(self, user_id: int, class_id: str, start_hours: datetime, end_hours: datetime):
+    def __init__(self, user_id: int, class_id: str, start_hours: datetime.datetime, end_hours: datetime.datetime):
         self.user_id = user_id
         self.class_id = class_id
         self.start_hours = start_hours
