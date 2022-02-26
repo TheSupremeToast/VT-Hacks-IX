@@ -12,7 +12,8 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 # set command prefix
 bot = commands.Bot(command_prefix = 'q! ')
 
-# load external extension files
+# load external extension files and remove help command
+bot.remove_command('help')
 load_cogs(bot)
 
 #
