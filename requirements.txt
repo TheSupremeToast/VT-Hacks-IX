@@ -1,0 +1,5 @@
+# run 'pip install -r requirements.txt'
+
+### Program dependencies ###
+py-cord
+python-dotenv
