@@ -11,6 +11,8 @@ class TAUser:
         self.start_hours = start_hours
         self.end_hours = end_hours
         self.assigned_student = 0
+        self.meeting_start = None
+        self.meeting_end = None
 
     
     '''
@@ -19,6 +21,7 @@ class TAUser:
     def assign(self, student_id: int):
         if self.in_hours() and self.assigned_student == 0:
             self.assigned_student = student_id
+            self.meeting_start = datetime.datetime.now()
         else:
             raise RuntimeError("Can't assign student to TA, a student is already currently assigned or the TAs office hours are not in session.")
 
@@ -27,9 +30,22 @@ class TAUser:
     Unassigns a student to this TA
     '''
     def unassign(self):
+        if self.assigned_student != 0:
+            self.meeting_end = datetime.datetime.now()
         self.assigned_student = 0
 
+
+    '''
+    Gets the duration of the last meeting, if there was no last meeting, None is returned
+    '''
+    def get_last_meeting_duration(self):
+        if self.meeting_start is None:
+            return None
+        if self.assigned_student == 0:
+            return self.meeting_end.timestamp() - self.meeting_start.timestamp()
+        return datetime.datetime.now().timestamp() - self.meeting_start.timestamp()
     
+
     '''
     Returns the currently assigned student for this TA, 0 if no student is assigned
     '''
@@ -42,6 +58,7 @@ class TAUser:
     '''
     def get_class_id(self) -> str:
         return self.class_id
+
 
     '''
     Gets the TA User ID
