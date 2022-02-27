@@ -75,8 +75,7 @@ class Calendar(commands.Cog):
             hours = s['hours']
             if(hours[day]!=0):
                 num_printed = num_printed + 1
-
-                ret = ret + "**" + s['discord_name'] + "**" +  " has hours from " + str(hours[day]['time_start']) + " to " + str(hours[day]['time_end'])
+                ret = ret + "**" + s['discord_name'] + "**" +  " has hours from " + str(hours[day]['time_start']) + " to " + str(hours[day]['time_end']) + '\n'
         if(num_printed==0):
             ret = ret + "No Hours Today\n"
         await ctx.send(ret)

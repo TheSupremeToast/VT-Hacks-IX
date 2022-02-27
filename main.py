@@ -47,12 +47,10 @@ async def reloadcogs(ctx):
         await ctx.send('Insufficient Permissions.')
         pass
     try:
-         reload_cogs(bot) 
-         await ctx.send('Cogs reloaded.')
+        reload_cogs(bot) 
+        await ctx.send('Cogs reloaded.')
     except:
         await ctx.send('An error occured.')
-
-
 
 # run the bot
 bot.run(TOKEN)
