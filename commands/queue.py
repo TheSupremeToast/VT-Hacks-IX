@@ -48,7 +48,7 @@ class Queue(commands.Cog):
 #
 def dequeue(ctx):
     try:
-        next_student = queue.pop()
+        next_student = queue.pop(0)
         return next_student
     except:
         return False
