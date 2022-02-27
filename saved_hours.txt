@@ -1,0 +1,1 @@
+{"discord_name": "surkan", "discord_id": 185194563248455680, "hours": [{"time_start": "0000", "time_end": "1000"}, {"time_start": "1000", "time_end": "2000"}, {"time_start": "2000", "time_end": "3000"}, {"time_start": "3000", "time_end": "4000"}, {"time_start": "4000", "time_end": "5000"}, {"time_start": "5000", "time_end": "6000"}, {"time_start": "6000", "time_end": "7000"}]}
