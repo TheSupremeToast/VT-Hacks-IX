@@ -6,10 +6,12 @@ from discord.ext import commands
 #
 class Queue(commands.Cog):
 
+    global queue
+    queue = []
 
     def __init__(self, client):
         self.client = client
-        self.queue = [] 
+        # self.queue = [] 
     
 
     #
@@ -27,7 +29,7 @@ class Queue(commands.Cog):
     @commands.command()
     async def ta_available(self, ctx):
         user = dequeue(ctx)
-        await ctx.send(f'See student {user} now.')
+        await ctx.send(f'See student <@{user}> now.')
 
     #
     # get the queue
@@ -44,12 +46,12 @@ class Queue(commands.Cog):
 #
 # remove user from queue and assign them to TA
 #
-    def dequeue(ctx):
-        try:
-            next_student = queue.pop()
-            return next_student
-        except:
-            return False
+def dequeue(ctx):
+    try:
+        next_student = queue.pop()
+        return next_student
+    except:
+        return False
 
 def setup(client):
     client.add_cog(Queue(client))
