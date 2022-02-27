@@ -1,4 +1,4 @@
-# VT-Hacks-IX
+# Office Hours Q-Bot
 
 By: James DeLoach, Grady Orr, Marcos Fassio Bazzi, and Patrick Dewey
 
